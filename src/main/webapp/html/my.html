@@ -2,11 +2,80 @@
 <head>
     <title>RPG</title>
     <script src=https://code.jquery.com/jquery-3.6.0.min.js></script>
-    <link href="/css/my.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <script defer type="text/javascript" src="/html/script.js"></script>
 </head>
 <body>
-<h1>RPG admin panel</h1>
-<h2>Accounts list:</h2>
+<div class="tittle-block">
+    <div class="tittle-block header-tittle">
+        <h1 class="title">RPG admin panel</h1>
+    </div>
+    <div class="tittle-block footer-tittle">
+        <h2 class="sub-tittle">Accounts list:</h2>
+    </div>
+</div>
 
+<div class="dropDown-list">
+    <label for="account-per-page">Count per page: </label>
+    <select name="account-per-page" id="account-per-page">
+
+    </select>
+</div>
+<table class="account-table">
+    <thead class="account-table-header">
+    <tr class="account-table__row account-table__row_header">
+        <th class="account_cell">#</th>
+        <th class="account_cell">Name</th>
+        <th class="account_cell">Title</th>
+        <th class="account_cell">Race</th>
+        <th class="account_cell">Profession</th>
+        <th class="account_cell">Level</th>
+        <th class="account_cell">Birthday</th>
+        <th class="account_cell">Banned</th>
+        <th class="account_cell">Edit</th>
+        <th class="account_cell">Delete</th>
+    </tr>
+    </thead>
+    <tbody class="account-table-body">
+
+    </tbody>
+</table>
+<div class="pagination-list">
+    <span class="pagination-text">Pages: </span>
+    <span class="pagination-buttons"></span>
+</div>
+<div class="account-creation">
+    <h1>Create a new account: </h1>
+    <form id="create-account-form">
+        <label for="name">Name: </label>
+        <input type="text" id="name" name="name" minlength="1" maxlength="12" required data-create-name>
+
+        <label for="title">Title: </label>
+        <input type="text" id="title" name="title" minlength="1" maxlength="30" required data-create-title>
+
+        <label for="race">Race: </label>
+        <select name="race" id="race" required data-create-race>
+
+        </select>
+
+        <label for="profession">Profession: </label>
+        <select name="profession" id="profession" required data-create-profession>
+
+        </select>
+
+        <label for="level">Level: </label>
+        <input type="number" id="level" name="level" min="0" max="100" required data-create-level>
+
+        <label for="birthday">Birthday: </label>
+        <input type="date" id="birthday" name="birthday" required data-create-birthday>
+
+        <label for="banned">Banned: </label>
+        <select name="banned" id="banned" required data-create-banned>
+
+        </select>
+
+        <button class="create-account-button">Create new account</button>
+    </form>
+</div>
 </body>
 </html>
